@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { 
   getCurrentUser, 
   setCurrentUser, 
-  clearUser, 
+  clearUser,
+  clearAllUsers, 
   isSignedIn, 
   addUser, 
   findUser, 
@@ -59,7 +60,8 @@ export const signinUser = createAsyncThunk('user/signinUser', async ({ email, pa
 });
 
 export const logout = createAsyncThunk('user/logout', async () => {
-  clearUser();
+  // Clear all user data 
+  clearAllUsers();
   return true;
 });
 

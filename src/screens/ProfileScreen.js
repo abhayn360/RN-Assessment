@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/userSlice';
+import { resetProducts } from '../redux/productSlice';
 import { useNavigation } from '@react-navigation/native';
 import { Typography } from '../utils/typography';
 
@@ -13,7 +14,10 @@ const ProfileScreen = () => {
   const navigation = useNavigation();
 
   const handleLogout = () => {
+    // Clear user data
     dispatch(logout());
+    // Reset products state
+    dispatch(resetProducts());
     navigation.replace('SignIn');
   };
 
