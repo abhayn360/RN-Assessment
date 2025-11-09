@@ -41,7 +41,7 @@ export default function AppNavigator() {
   }
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={isAuthenticated?'Tabs':'SignIn'}>
         <Stack.Screen name="Tabs" component={TabNavigator} />
          <Stack.Screen name="SignIn" component={SignInScreen} />
           <Stack.Screen name="SignUp" component={SignUpScreen} />

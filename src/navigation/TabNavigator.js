@@ -23,7 +23,7 @@ export default function TabNavigator() {
         tabBarLabelStyle: {
           ...Typography.captionSmall,
           fontSize: 12,
-          marginTop: 4,
+          marginVertical: 2,
         },
         tabBarStyle: {
           backgroundColor: COLORS.background,
